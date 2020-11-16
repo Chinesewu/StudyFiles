@@ -1,10 +1,10 @@
 # Spring Framework
 
-中文文档链接：
+中文文档：
 
 https://www.docs4dev.com/docs/zh/spring-framework/5.1.3.RELEASE/reference/web.html#webmvc-client
 
-官方文档链接：
+官方文档：
 
 https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc
 
