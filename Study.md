@@ -1,12 +1,18 @@
 # Spring Framework
 
-中文文档：
+中文文档链接：
 
 https://www.docs4dev.com/docs/zh/spring-framework/5.1.3.RELEASE/reference/web.html#webmvc-client
 
-官方文档：
+官方文档链接：
 
 https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc
+
+学习链接：
+
+https://blog.csdn.net/itcats_cn/article/details/81479185
+
+
 
 ## REST Clients
 
@@ -14,7 +20,7 @@ https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc
 
 #### 概括
 
-简化了HTTP请求以及处响应的过程，并且支持REST
+简化了HTTP请求以及处理响应的过程，并且支持REST
 
 #### 参考链接
 
@@ -192,7 +198,7 @@ MVC(Model View Controller)是一种软件设计的**框架模式**，它采用**
 
 ![img](https://img-blog.csdn.net/20180810094245464?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4NDQ5NTE4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-**SpringMVC的请求相应步骤如下**
+### **SpringMVC的请求相应步骤如下**
 
 解释一：
 
@@ -320,7 +326,7 @@ Spring Security 支持两种不同的认证方式：
 
 ### 介绍
 
-AOP（面向方面编程：Aspect Oriented Programing）和IoC一样是Spring容器的内核，声明式事务的功能在此基础上开花结果。
+AOP（面向切面编程：Aspect Oriented Programing）和IoC一样是Spring容器的内核，声明式事务的功能在此基础上开花结果。
 
 **连接点（Joinpoint）**
 
@@ -741,6 +747,12 @@ public class WeixinService {
 
 ## SpEL
 
+### 用法
+前言
+ SpEL（Spring Expression Language），即Spring表达式语言，是比JSP的EL更强大的一种表达式语言。为什么要总结SpEL，因为它可以在运行时查询和操作数据，尤其是数组列表型数据，因此可以缩减代码量，优化代码结构。个人认为很有用。
+
+SpEL有三种用法，一种是在注解@Value中；一种是XML配置；最后一种是在代码块中使用Expression。
+
 ### 参考链接
 
 1）https://www.jianshu.com/p/e0b50053b5d3
@@ -771,4 +783,10 @@ public class WeixinService {
 			---@AutoConfigurationPackage //作用：添加springboot项目的包扫描路径，要求以后写项目必须在主启动类的同包及子包中编辑
 			---@Import（AutoConfiguration.Registrar.class）//选择器，扫描springboot项目中的启动项文件，实现开箱即用
 		---@ComponentScan
+
+# labmda表达式
+
+ 使用Labmda表达式**需要函数式编程接口**，比如在Runnable接口上我们可以看到`@FunctionalInterface`注解（标记着这个接口只有一个抽象方法）
+
+我们使用Lambda表达式创建线程的时候，**并不关心接口名，方法名，参数名**。我们**只关注他的参数类型，参数个数，返回值**。
 

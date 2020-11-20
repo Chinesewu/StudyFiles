@@ -1,0 +1,5 @@
+view resolvers 视图解析器
+delegates	委托，代表
+repositories  存储库，数据库
+HandlerAdapter  处理器适配器
+
