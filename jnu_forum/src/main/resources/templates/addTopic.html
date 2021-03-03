@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/online">
+<head>
+    <title>发帖</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <article class="container" style="padding: 3% 0 2%;">
+            <header class="row">
+                <div class="col s12">
+                    <blockquote class="flow-text left" th:text="|选择一个目录并创建相应的帖子： |">发帖</blockquote>
+                </div>
+            </header>
+            <section>
+                <form th:action="@{/addTopic}" method="post">
+                    <div class="row">
+                        <div class="col s12">
+                            <p>
+                                <input value="se" name="category" class="with-gap" type="radio" id="se" required="required"/>
+                                <label for="se">篮球</label>
+                            </p>
+                            <p>
+                                <input value="ee" name="category" class="with-gap" type="radio" id="ee" required="required"/>
+                                <label for="ee">足球</label>
+                            </p>
+                            <p>
+                                <input value="mbs" name="category" class="with-gap" type="radio" id="mbs" required="required"/>
+                                <label for="mbs">羽毛球</label>
+                            </p>
+                            <p>
+                                <input value="spring" name="category" class="with-gap" type="radio" id="spring" required="required"/>
+                                <label for="spring">乒乓球</label>
+                            </p>
+                            <p>
+                                <input value="web" name="category" class="with-gap" type="radio" id="web" required="required"/>
+                                <label for="web">健身</label>
+                            </p>
+                            <p>
+                            		<input value="other" name="category" class="with-gap" type="radio" id="other" required="required"/>
+                                <label for="other">其他</label>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <label>帖子标题:
+                                <input type="text" name="title" maxlength="32" data-length="32" required="required"/>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <label>帖子内容:
+                            		<textarea name="content" class="materialize-textarea" maxlength="1024" data-length="1024" required="required"></textarea>
+                            </label>
+                        </div>
+                    </div>
+
+				<div class="row">
+                        <div class="col s12">
+                            <label>代码语言:
+                                <textarea name="code" class="materialize-textarea" placeholder="[optional]"
+                                          style="font-family: monospace, monospace;" maxlength="1024" data-length="1024"></textarea>
+                            </label>
+                        </div>
+                    </div>
+                    <input type="hidden" name="id_user" th:value="${user.getId()}"/>
+                    <div class="row">
+                        <div class="col s12 center">
+                            <button class="btn waves-effect waves-light btn-large" type="submit" name="add">发表</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </article>
+    </main>
+</body>
+</html>
