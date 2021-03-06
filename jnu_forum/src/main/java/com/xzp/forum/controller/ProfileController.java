@@ -10,6 +10,7 @@ import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.xzp.forum.util.ForumUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -163,9 +164,9 @@ public class ProfileController {
 	public String uploadImage(@RequestParam("file") MultipartFile file,HttpServletRequest request, Model model) {
 		try {
 			String fileUrl=qiniuService.saveImage(file);
-//			if(fileUrl == null) {
-//				return ForumUtil.getJSONString(1, "上传图片失败");
-//			}
+			if(fileUrl == null) {
+				return ForumUtil.getJSONString(1, "上传图片失败");
+			}
 			Image image=new Image();
 			image.setImgUrl(fileUrl);
 			image.setIdUser(hostHolder.getUser().getId());

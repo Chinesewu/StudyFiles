@@ -22,10 +22,10 @@ public class QiniuService {
 	private static final Logger logger = LoggerFactory.getLogger(QiniuService.class);
 
 	// 设置好账号的ACCESS_KEY和SECRET_KEY
-	String ACCESS_KEY = "gGFf-cA7cy-hyhN3jwTByS7h8SSDuGMtyKFZIIVf";
-	String SECRET_KEY = "7X51IlDOMO6UjQfL_vDcXPIr2PnLOickH1F2m30u";
+	String ACCESS_KEY = "q7nKvenN_WHcxfsqGYUR451TTMiCW6ZoetmmZeFv";
+	String SECRET_KEY = "hKerAndEEITocBA4diOZOABZvYDi7989L6oXwjhA";
 	// 要上传的空间
-	String bucketname = "nowcoder";
+	String bucketname = "wangyixiang";
 
 	// 密钥配置
 	Auth auth = Auth.create(ACCESS_KEY, SECRET_KEY);
@@ -34,7 +34,7 @@ public class QiniuService {
 	// ...其他参数参考类注释
 	UploadManager uploadManager = new UploadManager(cfg);
 
-	private static String QINIU_IMAGE_DOMAIN = "http://ox6xu9hb7.bkt.clouddn.com/";
+	private static String QINIU_IMAGE_DOMAIN = "http://qpfaitw59.hn-bkt.clouddn.com/";
 
 	// 简单上传，使用默认策略，只需要设置上传的空间名就可以了
 	public String getUpToken() {

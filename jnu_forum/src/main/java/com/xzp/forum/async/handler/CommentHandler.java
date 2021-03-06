@@ -20,7 +20,7 @@ import com.xzp.forum.util.HostHolder;
 /**
  * 评论的处理器
  * 
- * @author xiezhiping
+ * @author jrs
  *
  */
 @Component

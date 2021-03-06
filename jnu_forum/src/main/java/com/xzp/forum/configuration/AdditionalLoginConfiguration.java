@@ -4,7 +4,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 /**
  * 
- * @author xiezhiping
+ * @author jrs
  *
  */
 public class AdditionalLoginConfiguration extends WebMvcConfigurerAdapter {

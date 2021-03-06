@@ -5,7 +5,7 @@ import java.io.FileOutputStream;
 
 public class FileUtil {
 	
-	public static String IMAGE_DIR = "/root/jrs/JavaDevelop/upload/";
+	public static String IMAGE_DIR = "/";
 	// 图片允许的后缀扩展名
 	public static String[] IMAGE_FILE_EXTD = new String[] { "png", "bmp", "jpg", "jpeg","pdf" };
 	

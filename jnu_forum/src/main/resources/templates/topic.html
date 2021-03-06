@@ -20,11 +20,11 @@
 				</a> -->
 				<a th:href="@{'/profile/' + ${topic.getIdUser()}}">
 					<div class="chip left">
-						<img src="http://pj9qy0grp.bkt.clouddn.com/private.jpg" alt="Contact Person" th:text="${userDao.getUsernameById(topic.getIdUser())}" th:href="@{'/profile/' + ${topic.getIdUser()}}">Topic's author</img>
+						<img src="https://javase.tech/upload/2020/10/1e5f0ea67b65cea8662fa0a1f8dc140e-47997047507a48159518a2494c75d8d2.jpg" alt="Contact Person" th:text="${userDao.getUsernameById(topic.getIdUser())}" th:href="@{'/profile/' + ${topic.getIdUser()}}">Topic's author</img>
 					</div>
 				</a>
-				<a th:href="@{'/topics/' + ${topic.getCategory()+'/1'}}"> 
-					<span class="chip left" th:text="${topic.getCategory()}" style="background-color: #ee6e73;">帖子类别</span>
+				<a th:href="@{'/topics/' + ${topic.getCode()+'/1'}}">
+					<span class="chip left" th:text="${topic.getCode()}" style="background-color: #ee6e73;">HelloWorld</span>
 				</a>
 				<!-- 删除话题 -->
 				<!-- 
@@ -73,7 +73,7 @@
 						<input type="hidden" name="id_answer" th:value="${answer.getId()}" />
 						<input type="hidden" name="action" th:value="delete" /> 
 						<input type="hidden" name="id_topic" th:value="${topic.getId()}" />
-						<button class="chip left" style="background-color: #37b7ab;">Delete</button>
+						<button class="chip left" style="background-color: #37b7ab;">删除评论</button>
 					</form>
 				</span>
 				<div class="row">
@@ -101,8 +101,8 @@
 				</div>
 				<div class="row">
 					<div class="col s12">
-						<label>语言: <textarea name="code"
-								class="materialize-textarea" placeholder="[optional]"
+						<label>个性签名: <textarea name="code"
+								class="materialize-textarea" placeholder="[一日知秋]"
 								style="font-family: monospace, monospace;" maxlength="1024"
 								data-length="1024"></textarea>
 						</label>

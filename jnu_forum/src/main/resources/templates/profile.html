@@ -8,7 +8,7 @@
         <article class="container" style="padding: 3% 0 2%;">
             <header class="row">
                 <div class="col s12">
-                    <blockquote class="flow-text left" th:text="${otherUser.getUsername()} + |&apos; s profile|">Profile</blockquote>
+                    <blockquote class="flow-text left" th:text="${otherUser.getUsername()} + |的个人信息|">个人信息</blockquote>
                     <blockquote class="flow-text right" th:text="|Points: | + ${points}">Commitment</blockquote>
                 </div>
             </header>
@@ -34,11 +34,11 @@
             <section class="row">
                 <div class="col s12 m6">
                     <ul class="collection">
-                        <li class="collection-item center">Personal data</li>
+                        <li class="collection-item center">个人信息</li>
                         <li class="collection-item">
                             <span class="badge">
                                 <span th:text="${otherUser.getUsername()}">Nick</span>
-                            </span>用户名:
+                            </span>用户昵称:
                         </li>
                         <li class="collection-item">
                             <span class="badge">
@@ -49,7 +49,7 @@
                         		<a th:href="@{'/fans/' + ${otherUser.getId()}}" style="display: block; color: black">
                         			<span class="badge">
                                 		<span th:text="${followNums}">Created date</span>
-                            		</span>粉丝:
+                            		</span>粉丝人数:
                         		</a>
                         		<a th:if="${user.getId() != otherUser.getId()}" th:href="@{'/commonfans/' + ${otherUser.getId()} + '_' + ${user.getId()}}" style="display: block; color: #26a69a">
                         			<span class="left">
@@ -61,26 +61,26 @@
                 </div>
                 <div class="col s12 m6">
                     <ul class="collection">
-                        <li class="collection-item center strong">Activity</li>
+                        <li class="collection-item center strong">活跃数据</li>
                         <li class="collection-item">
                             <a th:href="@{'/topics/user/' + ${otherUser.getId()}+'_'+'1'}" style="display: block; color: #26a69a">
                                 <span class="badge">
                                     <span th:text="${numberOfTopics}"></span>
-                                </span>帖子:
+                                </span>发帖总数:
                             </a>
                         </li>
                         <li class="collection-item">
                             <a th:href="@{'/answers/' + ${otherUser.getId()}}" style="display: block; color: #26a69a">
                                 <span class="badge">
                                     <span th:text="${numberOfAnswers}"></span>
-                                </span>评论:
+                                </span>评论总数:
                             </a>
                         </li>
                         <li class="collection-item">
                             <a th:href="@{'/answers/useful/' + ${otherUser.getId()}}" style="display: block; color: #26a69a">
                                 <span class="badge">
                                     <span th:text="${numberOfHelped}"></span>
-                                </span>回帖:
+                                </span>回帖总数:
                             </a>
                         </li>
                     </ul>

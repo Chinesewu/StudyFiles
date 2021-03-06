@@ -18,7 +18,7 @@ import com.xzp.forum.dao.UserDao;
 
 /**
  * 
- * @author xiezhiping
+ * @author jrs
  *
  */
 @Configuration
