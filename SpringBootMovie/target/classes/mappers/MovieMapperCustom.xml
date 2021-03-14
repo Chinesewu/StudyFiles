@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.mapper.MovieMapperCustom">
+    <resultMap id="BaseResultMap" type="com.lin.model.Movie">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="hot" jdbcType="INTEGER" property="hot"/>
+        <result column="image_name" jdbcType="VARCHAR" property="imageName"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="publish_date" jdbcType="TIMESTAMP" property="publishDate"/>
+        <result column="title" jdbcType="VARCHAR" property="title"/>
+        <result column="content" jdbcType="LONGVARCHAR" property="content"/>
+    </resultMap>
+
+    <!--生成含有n条电影的随机列表-->
+    <select id="randomList" resultMap="BaseResultMap">
+        select
+               m.id,
+               m.hot,
+               m.image_name,
+               m.name,
+               m.publish_date,
+               m.title,
+               m.content
+        from movie m
+        order by rand()
+        limit #{count}
+    </select>
+
+    <!--根据条件分页查询电影-->
+    <select id="list" resultMap="BaseResultMap">
+        select
+               id,
+               hot,
+               image_name,
+               name,
+               publish_date,
+               title,
+               content
+        from movie
+        <where>
+            <if test="name != null and name != ''">
+                and name like concat('%', #{name}, '%')
+            </if>
+            <if test="hot != null and hot == 1">
+                and hot = 1
+            </if>
+        </where>
+    </select>
+
+    <!--查询符合条件的电影数-->
+    <select id="queryTotalCount" resultType="int">
+        select count(1)
+        from movie
+        <where>
+            <if test="name != null and name != ''">
+                and name like concat('%', #{name}, '%')
+            </if>
+            <if test="hot != null and hot == 1">
+                and hot = 1
+            </if>
+        </where>
+    </select>
+
+
+</mapper>
